@@ -21,5 +21,7 @@ resource "random_id" "name" {
 
 variable "bluemix_api_key" {}
 variable "org" {}
-variable "space" {}
+variable "space" {
+  default = "dev"
+}
 
