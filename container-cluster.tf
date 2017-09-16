@@ -21,8 +21,8 @@ data "ibm_container_cluster_config" "cluster_config" {
 
 variable "workers_map" {
   default = [
-    { name = "worker1", action = "add" },
-    { name = "worker2", action = "add" }
+    { name = "worker1" },
+    { name = "worker2" }
   ]
 }
 
