@@ -15,6 +15,7 @@ Sample template to provision an armada cluster of _N worker nodes_.
 |subnet_id|portable subnet to use for cluster||
 |public_vlan_id|||
 |private_vlan_id|||
+|cluster_name|base name for the cluster|kubecluster|
 |num_workers|how many worker nodes in the cluster|2|
 
 _NOTE: currently the `num_workers` variable has to be a value between 1 and 10. Also, all worker nodes in the cluster will have the name 'worker-N'. At this time it is not possible to change the base name of worker nodes within the cluster with this template_
