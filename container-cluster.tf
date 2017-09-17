@@ -9,7 +9,7 @@ resource "ibm_container_cluster" "kubecluster" {
   private_vlan_id = "${var.private_vlan_id}"
   no_subnet    = true
 
-  workers = "${var.workers_map}"
+  workers = "${var.workers[var.num_workers]}"
 }
 
 data "ibm_container_cluster_config" "cluster_config" {
@@ -17,13 +17,6 @@ data "ibm_container_cluster_config" "cluster_config" {
   org_guid        = "${data.ibm_org.org.id}"
   space_guid      = "${data.ibm_space.space.id}"
   account_guid    = "${data.ibm_account.account.id}"
-}
-
-variable "workers_map" {
-  default = [
-    { name = "worker1" },
-    { name = "worker2" }
-  ]
 }
 
 variable "cluster_name" {

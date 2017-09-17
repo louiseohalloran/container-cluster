@@ -15,7 +15,7 @@ Sample template to provision an armada cluster of _N worker nodes_.
 |subnet_id|portable subnet to use for cluster||
 |public_vlan_id|||
 |private_vlan_id|||
-|workers_map|list of worker names and actions for the cluster in HCL|[ {name = "worker1", action = "add"}, {name = "worker2", action = "add"} ]
+|num_workers|how many worker nodes in the cluster|2|
 
-_NOTE: currently the `workers_list` variable is ignored and a 2-worker cluster is always created. You can fork the github repo associated with this template in order to modify this (or wait for our next version)_
+_NOTE: currently the `num_workers` variable has to be a value between 1 and 10. Also, all worker nodes in the cluster will have the name 'worker-N'. At this time it is not possible to change the base name of worker nodes within the cluster with this template_
 
