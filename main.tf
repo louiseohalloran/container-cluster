@@ -4,6 +4,7 @@ provider "ibm" {
 
 data "ibm_org" "org" {
   org = "${var.org}"
+  region = "${var.region}"
 }
 
 data "ibm_space" "space" {
