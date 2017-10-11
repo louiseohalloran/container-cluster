@@ -18,16 +18,16 @@ Environments can be used to separate software components into development tiers 
 |Variable Name|Description|Default Value|
 |-------------|-----------|-------------|
 |bluemix_api_key|Your Bluemix API key. You can get the value by running `bx iam api-key-create <key name>`.||
-|org| Your Bluemix org GUID. You can get the value by running `bx iam org <org name> --guid`.||
-|space| Your Bluemix space GUID. You can get the value by running `bx iam space <space name> --guid`.|dev|
-|region| The [Bluemix region](https://console.bluemix.net/docs/containers/cs_regions.html#regions-and-locations) where you want to deploy your cluster. |us-south|
+|cluster_name| The base name for the cluster. |kubecluster|
 |datacenter| The data center for the cluster, You can get the list with by running `bluemix cs locations`. |dal12|
 |machine_type| The CPU cores, memory, network, and speed. You can get a list for a given location by running `bluemix cs machine-types <location>`. |u1c.2x4|
-|subnet_id| The portable subnet to use for cluster. You can view a list of available subnets by running `bx cs subnets`.||
-|public_vlan_id| The public VLAN for your account. You can run `bx cs vlans <location>`.||
-|private_vlan_id| The private VLAN for your account. You can run `bx cs vlans <location>`. ||
-|cluster_name| The base name for the cluster. |kubecluster|
 |num_workers| The number of worker nodes in the cluster. |2|
+|org| Your Bluemix org GUID. You can get the value by running `bx iam org <org name> --guid`.||
+|private_vlan_id| The private VLAN for your account. You can run `bx cs vlans <location>`. ||
+|public_vlan_id| The public VLAN for your account. You can run `bx cs vlans <location>`.||
+|region| The [Bluemix region](https://console.bluemix.net/docs/containers/cs_regions.html#regions-and-locations) where you want to deploy your cluster. |us-south|
+|space| Your Bluemix space GUID. You can get the value by running `bx iam space <space name> --guid`.|dev|
+|subnet_id| The portable subnet to use for cluster. You can view a list of available subnets by running `bx cs subnets`.||
 
 **NOTE:** The `num_workers` variable has to be a value between 1 and 10. All worker nodes in the cluster are assigned the name 'worker-_N_'. It is not possible to change the base name of worker nodes with this template.
 
