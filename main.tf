@@ -19,9 +19,14 @@ resource "random_id" "name" {
   byte_length = 4
 }
 
-variable "bluemix_api_key" {}
-variable "org" {}
+variable "bluemix_api_key" {
+  description = "Your Bluemix API key. You can get the value by running bx iam api-key-create <key name>."
+}
+variable "org" {
+  description = "Your Bluemix org GUID. You can get the value by running bx iam org <org name> --guid."
+}
 variable "space" {
   default = "dev"
+  description = "Your Bluemix space GUID. You can get the value by running bx iam space <space name> --guid."
 }
 
