@@ -24,10 +24,10 @@ variable "bluemix_api_key" {
   description = "Your Bluemix API key. You can get the value by running bx iam api-key-create <key name>."
 }
 variable "org" {
-  description = "Your Bluemix org GUID. You can get the value by running bx iam org <org name> --guid."
+  description = "Your Bluemix org name."
 }
 variable "space" {
   default = "dev"
-  description = "Your Bluemix space GUID. You can get the value by running bx iam space <space name> --guid."
+  description = "Your Bluemix space name."
 }
 
