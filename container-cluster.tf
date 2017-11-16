@@ -25,7 +25,7 @@ variable "cluster_name" {
 }
 variable "region" {
   default = "us-south"
-  description = "The Bluemix region where you want to deploy your cluster."
+  description = "The IBM Cloud region where you want to deploy your cluster."
 }
 variable "datacenter" {
   default = "dal12"

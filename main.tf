@@ -21,13 +21,13 @@ resource "random_id" "name" {
 }
 
 variable "bluemix_api_key" {
-  description = "Your Bluemix API key. You can get the value by running bx iam api-key-create <key name>."
+  description = "Your IBM Cloud API key. You can get the value by running bx iam api-key-create <key name>."
 }
 variable "org" {
-  description = "Your Bluemix org name."
+  description = "Your IBM Cloud org name."
 }
 variable "space" {
   default = "dev"
-  description = "Your Bluemix space name."
+  description = "Your IBM Cloud space name."
 }
 
