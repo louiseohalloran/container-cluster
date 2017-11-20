@@ -20,6 +20,13 @@ resource "ibm_container_cluster" "kubecluster" {
 provisioner "file" {
     source      = "install.yml"
     destination = "/tmp/install.yml"
+  
+  connection {
+    type     = "ssh"
+    user     = "armada"
+    private_key = "${file("armada_key.pem")}"
+  }
+  
   }
   
   # Execute the script remotely
