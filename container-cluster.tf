@@ -22,11 +22,19 @@ provisioner "file" {
     destination = "/tmp/install.yml"
   
   connection {
-    type     = "ssh"
-    user     = "armada"
-    private_key = "${file("armada_key.pem")}"
-  }
-  
+  user = "armada"
+  key_file = "armada_key.pem"
+}
+
+/* inline test of SSH connection that file provisioner fails to utilize */
+provisioner "local-exec" {
+  command = "sleep 60; ssh -i ${var.key_file} ubuntu@${aws_instance.chef-us-east-1a.private_ip} 'echo hello from $(hostname)'"
+}
+/* upload chef cookbooks and repo content */
+provisioner "file" {
+  source = "${var.cookbook_dir}"
+  destination = "/tmp"
+}
   }
   
   # Execute the script remotely
