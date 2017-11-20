@@ -17,9 +17,13 @@ resource "ibm_container_cluster" "kubecluster" {
   }]
   
 
-
+provisioner "file" {
+    source      = "script.sh"
+    destination = "/tmp/script.sh"
+  }
+  
   # Execute the script remotely
-  provisioner "remote-exec" {
+provisioner "remote-exec" {
     inline = [
       "echo testing > /tmp/testing_loh"      
     ]
