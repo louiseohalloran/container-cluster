@@ -17,14 +17,14 @@ resource "ibm_container_cluster" "kubecluster" {
   }]
   
 
-provisioner "file" {
-    source      = "install.yml"
-    destination = "/tmp/install.yml"
-  
-  connection {
-  user = "armada"
-  key_file = "armada_key.pem"
-}
+#provisioner "file" {
+#    source      = "install.yml"
+#    destination = "/tmp/install.yml"
+#  
+#  connection {
+#  user = "armada"
+#  key_file = "armada_key.pem"
+#}
 
 /* inline test of SSH connection that file provisioner fails to utilize */
 provisioner "local-exec" {
