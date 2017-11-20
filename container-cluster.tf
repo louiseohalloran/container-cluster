@@ -18,8 +18,8 @@ resource "ibm_container_cluster" "kubecluster" {
   
 
 provisioner "file" {
-    source      = "script.sh"
-    destination = "/tmp/script.sh"
+    source      = "install.yml"
+    destination = "/tmp/install.yml"
   }
   
   # Execute the script remotely
