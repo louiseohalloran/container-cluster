@@ -10,7 +10,7 @@ resource "ibm_container_cluster" "kubecluster" {
   no_subnet    = true
 
   workers = "${var.workers[var.num_workers]}"
-  user_metadata = "${file("install.yml")}"
+  
   
 }
 
