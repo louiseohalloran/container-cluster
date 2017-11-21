@@ -11,7 +11,16 @@ resource "ibm_container_cluster" "kubecluster" {
 
   workers = "${var.workers[var.num_workers]}"
   
+  connection {
+    user        = "${var.ssh_user}"
+    private_key = "${var.temp_private_key}"
+  }
   
+  # Create the installation script
+  provisioner "file" {
+    source      = "${var.install_script}"
+    destination = "/tmp/install.yml"
+}
   
 }
 
