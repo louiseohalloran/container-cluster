@@ -25,17 +25,18 @@ resource "ibm_container_cluster" "kubecluster" {
 }
 
 
-resource "ibm_container_bind_service" "profiledb_bind_service" {
-  count        = "1"
+ 
+  #resource "ibm_container_bind_service" "profiledb_bind_service" {
+  #count        = "1"
 
-  cluster_name_id             = "${ibm_container_cluster.kubecluster.name}"
-  service_instance_space_guid = "${data.ibm_space.space.id}"
-  service_instance_name_id    = "${ibm_service_instance.profiledb.id}"
-  namespace_id                = "default"
-  org_guid                    = "${data.ibm_org.org.id}"
-  space_guid                  = "${data.ibm_space.space.id}"
-  account_guid                = "${data.ibm_account.account.id}"
-}
+  #cluster_name_id             = "${ibm_container_cluster.kubecluster.name}"
+  #service_instance_space_guid = "${data.ibm_space.space.id}"
+  #service_instance_name_id    = "${ibm_service_instance.profiledb.id}"
+  #namespace_id                = "default"
+  #org_guid                    = "${data.ibm_org.org.id}"
+  #space_guid                  = "${data.ibm_space.space.id}"
+  #account_guid                = "${data.ibm_account.account.id}"
+#} 
 
 
 
