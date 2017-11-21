@@ -65,3 +65,40 @@ variable "public_vlan_id" {
 variable "subnet_id" {
   description = "The portable subnet to use for cluster. You can view a list of available subnets by running bx cs subnets."
 }
+
+
+
+
+
+
+variable "ssh_user" {
+  default = "root"
+  description = "The default user for the VM."
+}
+variable "ssh_label" {
+  default = "public ssh key - Schematics VM"
+  description = "An identifying label to assign to the SSH key."
+}
+variable "ssh_notes" {
+  default = ""
+  description = "Notes to store with the SSH key."
+}
+variable "public_key" {
+  default = ""
+  description = "Your public SSH key to use for access to the VM."
+}
+
+variable temp_public_key {
+    default = ""
+    description = "The temporary private key for the SSH key pair to use for provisioning."
+}
+variable temp_private_key {
+    default = ""
+    description = "The temporary public key of the SSH key pair to use for provisioning."
+}
+
+variable "install_script" {
+  default = "./install.yml"
+  description = "The relative location of install script."
+}
+
