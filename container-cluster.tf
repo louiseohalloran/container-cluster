@@ -9,19 +9,8 @@ resource "ibm_container_cluster" "kubecluster" {
   private_vlan_id = "${var.private_vlan_id}"
   no_subnet    = true
 
-  #workers = "${var.workers[var.num_workers]}"
-  workers = [{
-    name = "worker1"
-
-    action = "add"
-  }]
+  workers = "${var.workers[var.num_workers]}"
   
-  # Execute the script remotely
-  provisioner "remote-exec" {
-    inline = [
-      "echo testing > /tmp/testing_loh"      
-    ]
-}
   
 }
 
