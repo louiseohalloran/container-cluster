@@ -45,6 +45,7 @@ data "ibm_container_cluster_config" "cluster_config" {
   org_guid        = "${data.ibm_org.org.id}"
   space_guid      = "${data.ibm_space.space.id}"
   account_guid    = "${data.ibm_account.account.id}"
+  config_dir      = "/tmp/kubeclusterconfig"
 }
 
 variable "cluster_name" {
