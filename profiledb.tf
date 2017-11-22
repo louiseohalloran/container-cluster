@@ -1,4 +1,4 @@
-resource "ibm_service_instance" "profiledb" {
+/* resource "ibm_service_instance" "profiledb" {
   name       = "profiledb-${random_id.name.hex}"
   space_guid = "${data.ibm_space.space.id}"
   service    = "${var.profiledb_service_offering}"
@@ -17,4 +17,4 @@ variable "profiledb_service_offering" {
 
 variable "profiledb_plan" {
   default = "Lite"
-}
+} /
