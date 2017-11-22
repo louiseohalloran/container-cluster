@@ -17,10 +17,10 @@ resource "ibm_container_cluster" "kubecluster" {
   }
   
   # Create the installation script
-  provisioner "file" {
-    source      = "${var.install_script}"
-    destination = "/tmp/install.yml"
-}
+ # provisioner "file" {
+ #   source      = "${var.install_script}"
+ #   destination = "/tmp/install.yml"
+#}
   
 }
 
@@ -81,7 +81,8 @@ variable "subnet_id" {
 
 
 
-variable "ssh_user" {
+/*
+  variable "ssh_user" {
   default = "root"
   description = "The default user for the VM."
 }
@@ -110,5 +111,5 @@ variable temp_private_key {
 variable "install_script" {
   default = "./install.yml"
   description = "The relative location of install script."
-}
+} */
 
